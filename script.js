@@ -55,31 +55,11 @@ async function loadData() {
   }
 }
 
-function renderStats(data) {
-  const userCount = data.length;
-  const totalCount = data.reduce((sum, row) => sum + row.total, 0);
-  const topUser = data[0]?.name || '-';
-
-  $('stats').innerHTML = `
-    <div class="stat-card"><b>${userCount}</b><span>등록된 닉네임</span></div>
-    <div class="stat-card"><b>${totalCount}</b><span>총 업보 수</span></div>
-    <div class="stat-card"><b>${escapeHtml(topUser)}</b><span>현재 1등</span></div>
-  `;
-}
-
 function render() {
   const keyword = $('searchInput').value.trim().toLowerCase();
-  const sort = $('sortSelect').value;
-
-  let data = rows.filter((row) => row.name.toLowerCase().includes(keyword));
-
-  data.sort((a, b) => {
-    if (sort === 'total-asc') return a.total - b.total;
-    if (sort === 'name-asc') return a.name.localeCompare(b.name, 'ko');
-    return b.total - a.total;
-  });
-
-  renderStats(data);
+  const data = rows
+    .filter((row) => row.name.toLowerCase().includes(keyword))
+    .sort((a, b) => b.total - a.total);
 
   const list = $('list');
   list.className = 'list';
@@ -91,11 +71,18 @@ function render() {
 
   list.innerHTML = data.map((row) => `
     <article class="card">
-      <div class="name">${escapeHtml(row.name)}</div>
-      <div class="badges">
-        ${row.items.map((item) => `<span class="badge">${escapeHtml(item.label)} × ${escapeHtml(item.value)}</span>`).join('')}
+      <div class="card-head">
+        <div class="name">${escapeHtml(row.name)}</div>
+        <div class="total">${row.total}</div>
       </div>
-      <div class="total">${row.total}</div>
+      <div class="badges">
+        ${row.items.map((item) => `
+          <div class="badge">
+            <span class="badge-label">${escapeHtml(item.label)}</span>
+            <span class="badge-value">× ${escapeHtml(item.value)}</span>
+          </div>
+        `).join('')}
+      </div>
     </article>
   `).join('');
 }
@@ -107,7 +94,6 @@ function escapeHtml(value) {
 }
 
 $('searchInput').addEventListener('input', render);
-$('sortSelect').addEventListener('change', render);
 $('refreshBtn').addEventListener('click', loadData);
 
 loadData();
