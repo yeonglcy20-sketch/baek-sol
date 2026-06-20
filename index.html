@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>백솔 업보리스트</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-deco deco-1">✦</div>
+  <div class="bg-deco deco-2">♡</div>
+  <div class="bg-deco deco-3">✧</div>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="mascot" aria-hidden="true">
+        <div class="hair"></div>
+        <div class="face">⌒‿⌒</div>
+      </div>
+      <div class="hero-text">
+        <p class="eyebrow">Pink Hair Character · Baeksol</p>
+        <h1>백솔 업보리스트</h1>
+        <p class="desc">스프레드시트와 자동 연동되는 업보 현황판</p>
+      </div>
+    </section>
+
+    <section class="panel controls">
+      <input id="searchInput" type="search" placeholder="닉네임 검색" />
+      <select id="sortSelect" aria-label="정렬">
+        <option value="total-desc">총 업보 많은 순</option>
+        <option value="total-asc">총 업보 적은 순</option>
+        <option value="name-asc">닉네임 가나다순</option>
+      </select>
+      <button id="refreshBtn" type="button">새로고침</button>
+    </section>
+
+    <section class="stats" id="stats"></section>
+
+    <section class="panel">
+      <div class="table-head">
+        <h2>업보 목록</h2>
+        <span id="updatedAt">불러오는 중...</span>
+      </div>
+      <div id="list" class="list loading">스프레드시트 데이터를 불러오는 중입니다...</div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
