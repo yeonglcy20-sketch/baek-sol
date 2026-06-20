@@ -73,7 +73,6 @@ function render() {
     <article class="card">
       <div class="card-head">
         <div class="name">${escapeHtml(row.name)}</div>
-        <div class="total">${row.total}</div>
       </div>
       <div class="badges">
         ${row.items.map((item) => `
