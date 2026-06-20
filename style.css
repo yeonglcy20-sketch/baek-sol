@@ -21,13 +21,13 @@ button{border:0;border-radius:999px;padding:13px 22px;background:linear-gradient
 .tool-card,.list-card{margin-top:18px;border:1px solid var(--line);border-radius:28px;background:var(--glass);box-shadow:var(--shadow);backdrop-filter:blur(14px)}
 .tool-card{padding:16px}
 input{width:100%;border:1px solid #ffc9df;border-radius:18px;padding:14px 16px;font:inherit;color:var(--text);background:rgba(255,255,255,.92);outline:none}
-.section-title{display:flex;justify-content:space-between;gap:12px;align-items:end;padding:22px 24px 4px}
+.section-title{padding:22px 24px 4px}
 h2{margin:0;font-family:'Jua';font-size:2rem;color:var(--deep)}
-.section-title p{margin:0;opacity:.72}.list{padding:14px 18px 24px}.loading{min-height:160px;display:grid;place-items:center}
-.card{display:block;padding:18px 20px;margin-top:13px;border:1px solid #ffe0ed;border-radius:24px;background:linear-gradient(135deg,#fff,#fff6fb);box-shadow:0 10px 22px rgba(255,95,166,.08)}
+.list{padding:14px 18px 24px;display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}.loading{min-height:160px;display:grid;place-items:center}
+.card{width:285px;display:block;padding:18px 20px;border:1px solid #ffe0ed;border-radius:24px;background:linear-gradient(135deg,#fff,#fff6fb);box-shadow:0 10px 22px rgba(255,95,166,.08)}
 .card-head{display:flex;align-items:center;gap:14px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px dashed #ffc9df}
 .name{font-weight:900;color:#b83472;word-break:break-all;font-size:1.05rem}
 .badges{display:flex;flex-direction:column;gap:8px}
 .badge{display:flex;justify-content:space-between;gap:14px;padding:10px 13px;border-radius:16px;background:#fff0f7;border:1px solid #ffc6dc;color:#a92f68;font-weight:800;font-size:.95rem}
 .badge-label{word-break:break-word}.badge-value{white-space:nowrap;color:#c73b7c}.empty{padding:60px 20px;text-align:center;opacity:.75}
-@media(max-width:760px){.shell{width:min(100% - 22px,1160px);padding:22px 0 36px}.hero-card{text-align:center;padding:26px 20px}.hero-buttons{justify-content:center}.section-title{display:block}.section-title p{margin-top:6px}.card-head{align-items:center}.badge{font-size:.9rem}}
+@media(max-width:760px){.shell{width:min(100% - 22px,1160px);padding:22px 0 36px}.hero-card{text-align:center;padding:26px 20px}.hero-buttons{justify-content:center}.list{justify-content:center;padding:14px 10px 22px}.card{width:100%;max-width:320px}.card-head{align-items:center}.badge{font-size:.9rem}}
