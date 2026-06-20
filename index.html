@@ -7,39 +7,50 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="bg-deco deco-1">✦</div>
-  <div class="bg-deco deco-2">♡</div>
-  <div class="bg-deco deco-3">✧</div>
+  <div class="petal p1">✦</div><div class="petal p2">♡</div><div class="petal p3">✧</div><div class="petal p4">✿</div>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="mascot" aria-hidden="true">
-        <div class="hair"></div>
-        <div class="face">⌒‿⌒</div>
+  <main class="shell">
+    <section class="hero-card">
+      <div class="profile">
+        <div class="halo"></div>
+        <div class="girl" aria-label="분홍머리 여자 캐릭터 일러스트" role="img">
+          <div class="hair back"></div>
+          <div class="head">
+            <div class="bang b1"></div><div class="bang b2"></div><div class="bang b3"></div>
+            <div class="eye left"></div><div class="eye right"></div>
+            <div class="cheek left"></div><div class="cheek right"></div>
+            <div class="mouth"></div>
+          </div>
+          <div class="body"></div>
+          <div class="ribbon">♡</div>
+        </div>
       </div>
       <div class="hero-text">
-        <p class="eyebrow">Pink Hair Character · Baeksol</p>
+        <p class="mini">BAEKSOL KARMA ARCHIVE</p>
         <h1>백솔 업보리스트</h1>
-        <p class="desc">스프레드시트와 자동 연동되는 업보 현황판</p>
+        <p class="subtitle">분홍머리 여자 캐릭터 백솔의 달콤살벌 업보 기록소</p>
+        <div class="hero-buttons">
+          <button id="refreshBtn" type="button">새로고침</button>
+          <span id="updatedAt">불러오는 중...</span>
+        </div>
       </div>
     </section>
 
-    <section class="panel controls">
+    <section class="tool-card">
       <input id="searchInput" type="search" placeholder="닉네임 검색" />
       <select id="sortSelect" aria-label="정렬">
-        <option value="total-desc">총 업보 많은 순</option>
-        <option value="total-asc">총 업보 적은 순</option>
+        <option value="total-desc">업보 많은 순</option>
+        <option value="total-asc">업보 적은 순</option>
         <option value="name-asc">닉네임 가나다순</option>
       </select>
-      <button id="refreshBtn" type="button">새로고침</button>
     </section>
 
     <section class="stats" id="stats"></section>
 
-    <section class="panel">
-      <div class="table-head">
-        <h2>업보 목록</h2>
-        <span id="updatedAt">불러오는 중...</span>
+    <section class="list-card">
+      <div class="section-title">
+        <h2>업보 현황</h2>
+        <p>0 또는 빈칸은 자동으로 숨겨져요.</p>
       </div>
       <div id="list" class="list loading">스프레드시트 데이터를 불러오는 중입니다...</div>
     </section>
